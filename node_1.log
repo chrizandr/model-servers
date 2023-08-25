@@ -1,0 +1,899 @@
+WARNING:root:Did not find any loss value from model output, your pipeline will be in inference mode. If you want your pipeline to be in training mode, please specify a loss value via `output_loss_value_spec`.
+INFO:root:[1] Instantiating RankWorker
+INFO:root:Instantiating PipeStageExecutor for stage 1
+DEBUG:root:[1][0] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][0] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][0] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 0_submod_1
+DEBUG:root:[1][0] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][0] Launching RPC data transfer for ValueReference 0 ValueReference(0, 0_submod_0)
+DEBUG:root:[1][0] Requesting transfer of value ValueReference(0, 0_submod_0) for runlist item 0_submod_1 arg_idx 0
+DEBUG:root:[1][0] Executing transfer of value ValueReference(1, 0_submod_1) initiated by stage 2 for 0_submod_2
+DEBUG:root:[1][1] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][1] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][1] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 1_submod_1
+DEBUG:root:[1][1] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['0_submod_1'])
+DEBUG:root:[1][1] Launching RPC data transfer for ValueReference 0 ValueReference(0, 1_submod_0)
+DEBUG:root:[1][1] Requesting transfer of value ValueReference(0, 1_submod_0) for runlist item 1_submod_1 arg_idx 0
+DEBUG:root:[1][0] Completing transfer of value ValueReference(0, 0_submod_0) for runlist item 0_submod_1 arg_idx 0
+DEBUG:root:[1][0] all operands ready: 0_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][0] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 0
+DEBUG:root:[1][0] Populating result of type <class 'torch.Tensor'> for 0_submod_1
+DEBUG:root:[1][1] Executing transfer of value ValueReference(1, 1_submod_1) initiated by stage 2 for 1_submod_2
+DEBUG:root:[1][2] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][2] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][2] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 2_submod_1
+DEBUG:root:[1][2] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['1_submod_1'])
+DEBUG:root:[1][2] Launching RPC data transfer for ValueReference 0 ValueReference(0, 2_submod_0)
+DEBUG:root:[1][2] Requesting transfer of value ValueReference(0, 2_submod_0) for runlist item 2_submod_1 arg_idx 0
+DEBUG:root:[1][1] Completing transfer of value ValueReference(0, 1_submod_0) for runlist item 1_submod_1 arg_idx 0
+DEBUG:root:[1][1] all operands ready: 1_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][1] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 1
+DEBUG:root:[1][1] Populating result of type <class 'torch.Tensor'> for 1_submod_1
+DEBUG:root:[1][2] Executing transfer of value ValueReference(1, 2_submod_1) initiated by stage 2 for 2_submod_2
+DEBUG:root:[1][3] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][3] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][3] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 3_submod_1
+DEBUG:root:[1][3] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['2_submod_1'])
+DEBUG:root:[1][3] Launching RPC data transfer for ValueReference 0 ValueReference(0, 3_submod_0)
+DEBUG:root:[1][3] Requesting transfer of value ValueReference(0, 3_submod_0) for runlist item 3_submod_1 arg_idx 0
+DEBUG:root:[1][4] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][3] Executing transfer of value ValueReference(1, 3_submod_1) initiated by stage 2 for 3_submod_2
+DEBUG:root:[1][4] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][4] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 4_submod_1
+DEBUG:root:[1][4] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['2_submod_1', '3_submod_1'])
+DEBUG:root:[1][4] Launching RPC data transfer for ValueReference 0 ValueReference(0, 4_submod_0)
+DEBUG:root:[1][4] Requesting transfer of value ValueReference(0, 4_submod_0) for runlist item 4_submod_1 arg_idx 0
+DEBUG:root:[1][2] Completing transfer of value ValueReference(0, 2_submod_0) for runlist item 2_submod_1 arg_idx 0
+DEBUG:root:[1][2] all operands ready: 2_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][2] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 2
+DEBUG:root:[1][2] Populating result of type <class 'torch.Tensor'> for 2_submod_1
+DEBUG:root:[1][3] Completing transfer of value ValueReference(0, 3_submod_0) for runlist item 3_submod_1 arg_idx 0
+DEBUG:root:[1][3] all operands ready: 3_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][3] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 3
+DEBUG:root:[1][4] Completing transfer of value ValueReference(0, 4_submod_0) for runlist item 4_submod_1 arg_idx 0
+DEBUG:root:[1][4] all operands ready: 4_submod_1
+DEBUG:root:[1][3] Populating result of type <class 'torch.Tensor'> for 3_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][4] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 4
+DEBUG:root:[1][4] Executing transfer of value ValueReference(1, 4_submod_1) initiated by stage 2 for 4_submod_2
+DEBUG:root:[1][4] Populating result of type <class 'torch.Tensor'> for 4_submod_1
+DEBUG:root:[1][5] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][5] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][5] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 5_submod_1
+DEBUG:root:[1][5] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][5] Launching RPC data transfer for ValueReference 0 ValueReference(0, 5_submod_0)
+DEBUG:root:[1][5] Requesting transfer of value ValueReference(0, 5_submod_0) for runlist item 5_submod_1 arg_idx 0
+DEBUG:root:[1][5] Completing transfer of value ValueReference(0, 5_submod_0) for runlist item 5_submod_1 arg_idx 0
+DEBUG:root:[1][5] all operands ready: 5_submod_1
+DEBUG:root:[1][5] Executing transfer of value ValueReference(1, 5_submod_1) initiated by stage 2 for 5_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][6] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][5] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][6] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][6] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 6_submod_1
+DEBUG:root:[1][6] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][6] Launching RPC data transfer for ValueReference 0 ValueReference(0, 6_submod_0)
+DEBUG:root:[1][6] Requesting transfer of value ValueReference(0, 6_submod_0) for runlist item 6_submod_1 arg_idx 0
+INFO:root:[1] Running forward module for microbatch 5
+DEBUG:root:[1][5] Populating result of type <class 'torch.Tensor'> for 5_submod_1
+DEBUG:root:[1][6] Completing transfer of value ValueReference(0, 6_submod_0) for runlist item 6_submod_1 arg_idx 0
+DEBUG:root:[1][6] all operands ready: 6_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][6] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 6
+DEBUG:root:[1][7] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][7] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][7] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 7_submod_1
+DEBUG:root:[1][7] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][7] Launching RPC data transfer for ValueReference 0 ValueReference(0, 7_submod_0)
+DEBUG:root:[1][7] Requesting transfer of value ValueReference(0, 7_submod_0) for runlist item 7_submod_1 arg_idx 0
+DEBUG:root:[1][6] Executing transfer of value ValueReference(1, 6_submod_1) initiated by stage 2 for 6_submod_2
+DEBUG:root:[1][7] Executing transfer of value ValueReference(1, 7_submod_1) initiated by stage 2 for 7_submod_2
+DEBUG:root:[1][6] Populating result of type <class 'torch.Tensor'> for 6_submod_1
+DEBUG:root:[1][8] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][8] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][8] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 8_submod_1
+DEBUG:root:[1][8] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['7_submod_1'])
+DEBUG:root:[1][8] Launching RPC data transfer for ValueReference 0 ValueReference(0, 8_submod_0)
+DEBUG:root:[1][8] Requesting transfer of value ValueReference(0, 8_submod_0) for runlist item 8_submod_1 arg_idx 0
+DEBUG:root:[1][7] Completing transfer of value ValueReference(0, 7_submod_0) for runlist item 7_submod_1 arg_idx 0
+DEBUG:root:[1][7] all operands ready: 7_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][7] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 7
+DEBUG:root:[1][8] Completing transfer of value ValueReference(0, 8_submod_0) for runlist item 8_submod_1 arg_idx 0
+DEBUG:root:[1][8] all operands ready: 8_submod_1
+DEBUG:root:[1][8] Executing transfer of value ValueReference(1, 8_submod_1) initiated by stage 2 for 8_submod_2
+DEBUG:root:[1][9] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][9] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][9] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 9_submod_1
+DEBUG:root:[1][9] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][9] Launching RPC data transfer for ValueReference 0 ValueReference(0, 9_submod_0)
+DEBUG:root:[1][9] Requesting transfer of value ValueReference(0, 9_submod_0) for runlist item 9_submod_1 arg_idx 0
+DEBUG:root:[1][7] Populating result of type <class 'torch.Tensor'> for 7_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][8] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 8
+DEBUG:root:[1][9] Completing transfer of value ValueReference(0, 9_submod_0) for runlist item 9_submod_1 arg_idx 0
+DEBUG:root:[1][9] all operands ready: 9_submod_1
+DEBUG:root:[1][8] Populating result of type <class 'torch.Tensor'> for 8_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][9] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][9] Executing transfer of value ValueReference(1, 9_submod_1) initiated by stage 2 for 9_submod_2
+DEBUG:root:[1][10] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][10] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][10] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 10_submod_1
+DEBUG:root:[1][10] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][10] Launching RPC data transfer for ValueReference 0 ValueReference(0, 10_submod_0)
+INFO:root:[1] Running forward module for microbatch 9
+DEBUG:root:[1][10] Requesting transfer of value ValueReference(0, 10_submod_0) for runlist item 10_submod_1 arg_idx 0
+DEBUG:root:[1][9] Populating result of type <class 'torch.Tensor'> for 9_submod_1
+DEBUG:root:[1][10] Completing transfer of value ValueReference(0, 10_submod_0) for runlist item 10_submod_1 arg_idx 0
+DEBUG:root:[1][10] all operands ready: 10_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][10] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 10
+DEBUG:root:[1][11] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][11] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][11] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 11_submod_1
+DEBUG:root:[1][11] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][11] Launching RPC data transfer for ValueReference 0 ValueReference(0, 11_submod_0)
+DEBUG:root:[1][11] Requesting transfer of value ValueReference(0, 11_submod_0) for runlist item 11_submod_1 arg_idx 0
+DEBUG:root:[1][10] Executing transfer of value ValueReference(1, 10_submod_1) initiated by stage 2 for 10_submod_2
+DEBUG:root:[1][10] Populating result of type <class 'torch.Tensor'> for 10_submod_1
+DEBUG:root:[1][11] Completing transfer of value ValueReference(0, 11_submod_0) for runlist item 11_submod_1 arg_idx 0
+DEBUG:root:[1][11] all operands ready: 11_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][11] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 11
+DEBUG:root:[1][12] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][11] Executing transfer of value ValueReference(1, 11_submod_1) initiated by stage 2 for 11_submod_2
+DEBUG:root:[1][12] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][12] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 12_submod_1
+DEBUG:root:[1][12] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][12] Launching RPC data transfer for ValueReference 0 ValueReference(0, 12_submod_0)
+DEBUG:root:[1][12] Requesting transfer of value ValueReference(0, 12_submod_0) for runlist item 12_submod_1 arg_idx 0
+DEBUG:root:[1][11] Populating result of type <class 'torch.Tensor'> for 11_submod_1
+DEBUG:root:[1][12] Executing transfer of value ValueReference(1, 12_submod_1) initiated by stage 2 for 12_submod_2
+DEBUG:root:[1][12] Completing transfer of value ValueReference(0, 12_submod_0) for runlist item 12_submod_1 arg_idx 0
+DEBUG:root:[1][12] all operands ready: 12_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][12] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 12
+DEBUG:root:[1][13] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][13] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][13] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 13_submod_1
+DEBUG:root:[1][13] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][13] Launching RPC data transfer for ValueReference 0 ValueReference(0, 13_submod_0)
+DEBUG:root:[1][13] Requesting transfer of value ValueReference(0, 13_submod_0) for runlist item 13_submod_1 arg_idx 0
+DEBUG:root:[1][12] Populating result of type <class 'torch.Tensor'> for 12_submod_1
+DEBUG:root:[1][13] Completing transfer of value ValueReference(0, 13_submod_0) for runlist item 13_submod_1 arg_idx 0
+DEBUG:root:[1][13] all operands ready: 13_submod_1
+DEBUG:root:[1][13] Executing transfer of value ValueReference(1, 13_submod_1) initiated by stage 2 for 13_submod_2
+DEBUG:root:[1][14] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][14] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][14] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 14_submod_1
+DEBUG:root:[1][14] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][14] Launching RPC data transfer for ValueReference 0 ValueReference(0, 14_submod_0)
+DEBUG:root:[1][14] Requesting transfer of value ValueReference(0, 14_submod_0) for runlist item 14_submod_1 arg_idx 0
+DEBUG:root:[1][14] Completing transfer of value ValueReference(0, 14_submod_0) for runlist item 14_submod_1 arg_idx 0
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][13] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][14] all operands ready: 14_submod_1
+INFO:root:[1] Running forward module for microbatch 13
+DEBUG:root:[1][13] Populating result of type <class 'torch.Tensor'> for 13_submod_1
+DEBUG:root:[1][14] Executing transfer of value ValueReference(1, 14_submod_1) initiated by stage 2 for 14_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][15] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][15] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][15] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 15_submod_1
+DEBUG:root:[1][15] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][15] Launching RPC data transfer for ValueReference 0 ValueReference(0, 15_submod_0)
+DEBUG:root:[1][15] Requesting transfer of value ValueReference(0, 15_submod_0) for runlist item 15_submod_1 arg_idx 0
+DEBUG:root:[1][14] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 14
+DEBUG:root:[1][14] Populating result of type <class 'torch.Tensor'> for 14_submod_1
+DEBUG:root:[1][15] Completing transfer of value ValueReference(0, 15_submod_0) for runlist item 15_submod_1 arg_idx 0
+DEBUG:root:[1][15] all operands ready: 15_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][15] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 15
+DEBUG:root:[1][15] Populating result of type <class 'torch.Tensor'> for 15_submod_1
+DEBUG:root:[1][15] Executing transfer of value ValueReference(1, 15_submod_1) initiated by stage 2 for 15_submod_2
+DEBUG:root:[1][16] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][16] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][16] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 16_submod_1
+DEBUG:root:[1][16] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][16] Launching RPC data transfer for ValueReference 0 ValueReference(0, 16_submod_0)
+DEBUG:root:[1][16] Requesting transfer of value ValueReference(0, 16_submod_0) for runlist item 16_submod_1 arg_idx 0
+DEBUG:root:[1][16] Completing transfer of value ValueReference(0, 16_submod_0) for runlist item 16_submod_1 arg_idx 0
+DEBUG:root:[1][16] all operands ready: 16_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][16] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 16
+DEBUG:root:[1][16] Populating result of type <class 'torch.Tensor'> for 16_submod_1
+DEBUG:root:[1][16] Executing transfer of value ValueReference(1, 16_submod_1) initiated by stage 2 for 16_submod_2
+DEBUG:root:[1][17] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][17] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][17] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 17_submod_1
+DEBUG:root:[1][17] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][17] Launching RPC data transfer for ValueReference 0 ValueReference(0, 17_submod_0)
+DEBUG:root:[1][17] Requesting transfer of value ValueReference(0, 17_submod_0) for runlist item 17_submod_1 arg_idx 0
+DEBUG:root:[1][17] Completing transfer of value ValueReference(0, 17_submod_0) for runlist item 17_submod_1 arg_idx 0
+DEBUG:root:[1][17] all operands ready: 17_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][17] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 17
+DEBUG:root:[1][17] Executing transfer of value ValueReference(1, 17_submod_1) initiated by stage 2 for 17_submod_2
+DEBUG:root:[1][18] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][18] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][18] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 18_submod_1
+DEBUG:root:[1][18] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][18] Launching RPC data transfer for ValueReference 0 ValueReference(0, 18_submod_0)
+DEBUG:root:[1][18] Requesting transfer of value ValueReference(0, 18_submod_0) for runlist item 18_submod_1 arg_idx 0
+DEBUG:root:[1][17] Populating result of type <class 'torch.Tensor'> for 17_submod_1
+DEBUG:root:[1][18] Executing transfer of value ValueReference(1, 18_submod_1) initiated by stage 2 for 18_submod_2
+DEBUG:root:[1][18] Completing transfer of value ValueReference(0, 18_submod_0) for runlist item 18_submod_1 arg_idx 0
+DEBUG:root:[1][18] all operands ready: 18_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][18] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 18
+DEBUG:root:[1][19] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][19] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][19] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 19_submod_1
+DEBUG:root:[1][19] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][19] Launching RPC data transfer for ValueReference 0 ValueReference(0, 19_submod_0)
+DEBUG:root:[1][19] Requesting transfer of value ValueReference(0, 19_submod_0) for runlist item 19_submod_1 arg_idx 0
+DEBUG:root:[1][18] Populating result of type <class 'torch.Tensor'> for 18_submod_1
+DEBUG:root:[1][19] Executing transfer of value ValueReference(1, 19_submod_1) initiated by stage 2 for 19_submod_2
+DEBUG:root:[1][19] Completing transfer of value ValueReference(0, 19_submod_0) for runlist item 19_submod_1 arg_idx 0
+DEBUG:root:[1][19] all operands ready: 19_submod_1
+DEBUG:root:[1][20] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][20] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][20] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 20_submod_1
+DEBUG:root:[1][20] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][20] Launching RPC data transfer for ValueReference 0 ValueReference(0, 20_submod_0)
+DEBUG:root:[1][20] Requesting transfer of value ValueReference(0, 20_submod_0) for runlist item 20_submod_1 arg_idx 0
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][19] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 19
+DEBUG:root:[1][20] Completing transfer of value ValueReference(0, 20_submod_0) for runlist item 20_submod_1 arg_idx 0
+DEBUG:root:[1][20] all operands ready: 20_submod_1
+DEBUG:root:[1][19] Populating result of type <class 'torch.Tensor'> for 19_submod_1
+DEBUG:root:[1][20] Executing transfer of value ValueReference(1, 20_submod_1) initiated by stage 2 for 20_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][20] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 20
+DEBUG:root:[1][21] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][21] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][21] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 21_submod_1
+DEBUG:root:[1][21] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][21] Launching RPC data transfer for ValueReference 0 ValueReference(0, 21_submod_0)
+DEBUG:root:[1][21] Requesting transfer of value ValueReference(0, 21_submod_0) for runlist item 21_submod_1 arg_idx 0
+DEBUG:root:[1][20] Populating result of type <class 'torch.Tensor'> for 20_submod_1
+DEBUG:root:[1][21] Completing transfer of value ValueReference(0, 21_submod_0) for runlist item 21_submod_1 arg_idx 0
+DEBUG:root:[1][21] all operands ready: 21_submod_1
+DEBUG:root:[1][21] Executing transfer of value ValueReference(1, 21_submod_1) initiated by stage 2 for 21_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][22] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][22] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][22] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 22_submod_1
+DEBUG:root:[1][22] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][22] Launching RPC data transfer for ValueReference 0 ValueReference(0, 22_submod_0)
+DEBUG:root:[1][22] Requesting transfer of value ValueReference(0, 22_submod_0) for runlist item 22_submod_1 arg_idx 0
+DEBUG:root:[1][21] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 21
+DEBUG:root:[1][21] Populating result of type <class 'torch.Tensor'> for 21_submod_1
+DEBUG:root:[1][22] Executing transfer of value ValueReference(1, 22_submod_1) initiated by stage 2 for 22_submod_2
+DEBUG:root:[1][23] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][23] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][23] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 23_submod_1
+DEBUG:root:[1][23] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['22_submod_1'])
+DEBUG:root:[1][23] Launching RPC data transfer for ValueReference 0 ValueReference(0, 23_submod_0)
+DEBUG:root:[1][23] Requesting transfer of value ValueReference(0, 23_submod_0) for runlist item 23_submod_1 arg_idx 0
+DEBUG:root:[1][22] Completing transfer of value ValueReference(0, 22_submod_0) for runlist item 22_submod_1 arg_idx 0
+DEBUG:root:[1][22] all operands ready: 22_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][22] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 22
+DEBUG:root:[1][23] Completing transfer of value ValueReference(0, 23_submod_0) for runlist item 23_submod_1 arg_idx 0
+DEBUG:root:[1][23] all operands ready: 23_submod_1
+DEBUG:root:[1][22] Populating result of type <class 'torch.Tensor'> for 22_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][23] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 23
+DEBUG:root:[1][23] Executing transfer of value ValueReference(1, 23_submod_1) initiated by stage 2 for 23_submod_2
+DEBUG:root:[1][24] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][24] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][24] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 24_submod_1
+DEBUG:root:[1][24] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][24] Launching RPC data transfer for ValueReference 0 ValueReference(0, 24_submod_0)
+DEBUG:root:[1][24] Requesting transfer of value ValueReference(0, 24_submod_0) for runlist item 24_submod_1 arg_idx 0
+DEBUG:root:[1][23] Populating result of type <class 'torch.Tensor'> for 23_submod_1
+DEBUG:root:[1][24] Completing transfer of value ValueReference(0, 24_submod_0) for runlist item 24_submod_1 arg_idx 0
+DEBUG:root:[1][24] all operands ready: 24_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][24] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 24
+DEBUG:root:[1][25] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][25] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][25] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 25_submod_1
+DEBUG:root:[1][25] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][25] Launching RPC data transfer for ValueReference 0 ValueReference(0, 25_submod_0)
+DEBUG:root:[1][25] Requesting transfer of value ValueReference(0, 25_submod_0) for runlist item 25_submod_1 arg_idx 0
+DEBUG:root:[1][24] Executing transfer of value ValueReference(1, 24_submod_1) initiated by stage 2 for 24_submod_2
+DEBUG:root:[1][24] Populating result of type <class 'torch.Tensor'> for 24_submod_1
+DEBUG:root:[1][25] Completing transfer of value ValueReference(0, 25_submod_0) for runlist item 25_submod_1 arg_idx 0
+DEBUG:root:[1][25] all operands ready: 25_submod_1
+DEBUG:root:[1][25] Executing transfer of value ValueReference(1, 25_submod_1) initiated by stage 2 for 25_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][25] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 25
+DEBUG:root:[1][25] Populating result of type <class 'torch.Tensor'> for 25_submod_1
+DEBUG:root:[1][26] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][26] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][26] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 26_submod_1
+DEBUG:root:[1][26] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][26] Launching RPC data transfer for ValueReference 0 ValueReference(0, 26_submod_0)
+DEBUG:root:[1][26] Requesting transfer of value ValueReference(0, 26_submod_0) for runlist item 26_submod_1 arg_idx 0
+DEBUG:root:[1][26] Completing transfer of value ValueReference(0, 26_submod_0) for runlist item 26_submod_1 arg_idx 0
+DEBUG:root:[1][26] all operands ready: 26_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][26] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 26
+DEBUG:root:[1][26] Executing transfer of value ValueReference(1, 26_submod_1) initiated by stage 2 for 26_submod_2
+DEBUG:root:[1][26] Populating result of type <class 'torch.Tensor'> for 26_submod_1
+DEBUG:root:[1][27] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][27] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][27] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 27_submod_1
+DEBUG:root:[1][27] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][27] Launching RPC data transfer for ValueReference 0 ValueReference(0, 27_submod_0)
+DEBUG:root:[1][27] Requesting transfer of value ValueReference(0, 27_submod_0) for runlist item 27_submod_1 arg_idx 0
+DEBUG:root:[1][27] Completing transfer of value ValueReference(0, 27_submod_0) for runlist item 27_submod_1 arg_idx 0
+DEBUG:root:[1][27] all operands ready: 27_submod_1
+DEBUG:root:[1][28] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][27] Executing transfer of value ValueReference(1, 27_submod_1) initiated by stage 2 for 27_submod_2
+DEBUG:root:[1][28] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][27] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][28] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 28_submod_1
+DEBUG:root:[1][28] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+INFO:root:[1] Running forward module for microbatch 27
+DEBUG:root:[1][28] Launching RPC data transfer for ValueReference 0 ValueReference(0, 28_submod_0)
+DEBUG:root:[1][28] Requesting transfer of value ValueReference(0, 28_submod_0) for runlist item 28_submod_1 arg_idx 0
+DEBUG:root:[1][27] Populating result of type <class 'torch.Tensor'> for 27_submod_1
+DEBUG:root:[1][28] Completing transfer of value ValueReference(0, 28_submod_0) for runlist item 28_submod_1 arg_idx 0
+DEBUG:root:[1][28] all operands ready: 28_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][28] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 28
+DEBUG:root:[1][29] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][28] Populating result of type <class 'torch.Tensor'> for 28_submod_1
+DEBUG:root:[1][29] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][29] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 29_submod_1
+DEBUG:root:[1][29] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][29] Launching RPC data transfer for ValueReference 0 ValueReference(0, 29_submod_0)
+DEBUG:root:[1][29] Requesting transfer of value ValueReference(0, 29_submod_0) for runlist item 29_submod_1 arg_idx 0
+DEBUG:root:[1][28] Executing transfer of value ValueReference(1, 28_submod_1) initiated by stage 2 for 28_submod_2
+DEBUG:root:[1][29] Executing transfer of value ValueReference(1, 29_submod_1) initiated by stage 2 for 29_submod_2
+DEBUG:root:[1][29] Completing transfer of value ValueReference(0, 29_submod_0) for runlist item 29_submod_1 arg_idx 0
+DEBUG:root:[1][29] all operands ready: 29_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][29] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][30] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+INFO:root:[1] Running forward module for microbatch 29
+DEBUG:root:[1][30] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][30] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 30_submod_1
+DEBUG:root:[1][30] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][30] Launching RPC data transfer for ValueReference 0 ValueReference(0, 30_submod_0)
+DEBUG:root:[1][30] Requesting transfer of value ValueReference(0, 30_submod_0) for runlist item 30_submod_1 arg_idx 0
+DEBUG:root:[1][29] Populating result of type <class 'torch.Tensor'> for 29_submod_1
+DEBUG:root:[1][30] Executing transfer of value ValueReference(1, 30_submod_1) initiated by stage 2 for 30_submod_2
+DEBUG:root:[1][30] Completing transfer of value ValueReference(0, 30_submod_0) for runlist item 30_submod_1 arg_idx 0
+DEBUG:root:[1][30] all operands ready: 30_submod_1
+DEBUG:root:[1][31] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][31] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][31] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 31_submod_1
+DEBUG:root:[1][31] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][31] Launching RPC data transfer for ValueReference 0 ValueReference(0, 31_submod_0)
+DEBUG:root:[1][31] Requesting transfer of value ValueReference(0, 31_submod_0) for runlist item 31_submod_1 arg_idx 0
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][30] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 30
+DEBUG:root:[1][31] Completing transfer of value ValueReference(0, 31_submod_0) for runlist item 31_submod_1 arg_idx 0
+DEBUG:root:[1][31] all operands ready: 31_submod_1
+DEBUG:root:[1][30] Populating result of type <class 'torch.Tensor'> for 30_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][31] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 31
+DEBUG:root:[1][32] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][32] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][32] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 32_submod_1
+DEBUG:root:[1][32] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][32] Launching RPC data transfer for ValueReference 0 ValueReference(0, 32_submod_0)
+DEBUG:root:[1][32] Requesting transfer of value ValueReference(0, 32_submod_0) for runlist item 32_submod_1 arg_idx 0
+DEBUG:root:[1][31] Executing transfer of value ValueReference(1, 31_submod_1) initiated by stage 2 for 31_submod_2
+DEBUG:root:[1][31] Populating result of type <class 'torch.Tensor'> for 31_submod_1
+DEBUG:root:[1][32] Completing transfer of value ValueReference(0, 32_submod_0) for runlist item 32_submod_1 arg_idx 0
+DEBUG:root:[1][32] all operands ready: 32_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][32] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][32] Executing transfer of value ValueReference(1, 32_submod_1) initiated by stage 2 for 32_submod_2
+INFO:root:[1] Running forward module for microbatch 32
+DEBUG:root:[1][33] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][33] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][33] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 33_submod_1
+DEBUG:root:[1][33] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][33] Launching RPC data transfer for ValueReference 0 ValueReference(0, 33_submod_0)
+DEBUG:root:[1][33] Requesting transfer of value ValueReference(0, 33_submod_0) for runlist item 33_submod_1 arg_idx 0
+DEBUG:root:[1][32] Populating result of type <class 'torch.Tensor'> for 32_submod_1
+DEBUG:root:[1][33] Completing transfer of value ValueReference(0, 33_submod_0) for runlist item 33_submod_1 arg_idx 0
+DEBUG:root:[1][33] all operands ready: 33_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][34] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][34] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][33] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][34] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 34_submod_1
+DEBUG:root:[1][33] Executing transfer of value ValueReference(1, 33_submod_1) initiated by stage 2 for 33_submod_2
+DEBUG:root:[1][34] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][34] Launching RPC data transfer for ValueReference 0 ValueReference(0, 34_submod_0)
+DEBUG:root:[1][34] Requesting transfer of value ValueReference(0, 34_submod_0) for runlist item 34_submod_1 arg_idx 0
+INFO:root:[1] Running forward module for microbatch 33
+DEBUG:root:[1][33] Populating result of type <class 'torch.Tensor'> for 33_submod_1
+DEBUG:root:[1][34] Completing transfer of value ValueReference(0, 34_submod_0) for runlist item 34_submod_1 arg_idx 0
+DEBUG:root:[1][34] all operands ready: 34_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][34] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 34
+DEBUG:root:[1][34] Populating result of type <class 'torch.Tensor'> for 34_submod_1
+DEBUG:root:[1][34] Executing transfer of value ValueReference(1, 34_submod_1) initiated by stage 2 for 34_submod_2
+DEBUG:root:[1][35] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][35] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][35] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 35_submod_1
+DEBUG:root:[1][35] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][35] Launching RPC data transfer for ValueReference 0 ValueReference(0, 35_submod_0)
+DEBUG:root:[1][35] Requesting transfer of value ValueReference(0, 35_submod_0) for runlist item 35_submod_1 arg_idx 0
+DEBUG:root:[1][35] Completing transfer of value ValueReference(0, 35_submod_0) for runlist item 35_submod_1 arg_idx 0
+DEBUG:root:[1][35] all operands ready: 35_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][35] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][35] Executing transfer of value ValueReference(1, 35_submod_1) initiated by stage 2 for 35_submod_2
+INFO:root:[1] Running forward module for microbatch 35
+DEBUG:root:[1][35] Populating result of type <class 'torch.Tensor'> for 35_submod_1
+DEBUG:root:[1][36] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][36] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][36] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 36_submod_1
+DEBUG:root:[1][36] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][36] Launching RPC data transfer for ValueReference 0 ValueReference(0, 36_submod_0)
+DEBUG:root:[1][36] Requesting transfer of value ValueReference(0, 36_submod_0) for runlist item 36_submod_1 arg_idx 0
+DEBUG:root:[1][36] Executing transfer of value ValueReference(1, 36_submod_1) initiated by stage 2 for 36_submod_2
+DEBUG:root:[1][36] Completing transfer of value ValueReference(0, 36_submod_0) for runlist item 36_submod_1 arg_idx 0
+DEBUG:root:[1][36] all operands ready: 36_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][36] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 36
+DEBUG:root:[1][36] Populating result of type <class 'torch.Tensor'> for 36_submod_1
+DEBUG:root:[1][37] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][37] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][37] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 37_submod_1
+DEBUG:root:[1][37] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][37] Launching RPC data transfer for ValueReference 0 ValueReference(0, 37_submod_0)
+DEBUG:root:[1][37] Requesting transfer of value ValueReference(0, 37_submod_0) for runlist item 37_submod_1 arg_idx 0
+DEBUG:root:[1][37] Executing transfer of value ValueReference(1, 37_submod_1) initiated by stage 2 for 37_submod_2
+DEBUG:root:[1][37] Completing transfer of value ValueReference(0, 37_submod_0) for runlist item 37_submod_1 arg_idx 0
+DEBUG:root:[1][37] all operands ready: 37_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][37] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 37
+DEBUG:root:[1][37] Populating result of type <class 'torch.Tensor'> for 37_submod_1
+DEBUG:root:[1][38] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][38] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][38] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 38_submod_1
+DEBUG:root:[1][38] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][38] Launching RPC data transfer for ValueReference 0 ValueReference(0, 38_submod_0)
+DEBUG:root:[1][38] Requesting transfer of value ValueReference(0, 38_submod_0) for runlist item 38_submod_1 arg_idx 0
+DEBUG:root:[1][38] Completing transfer of value ValueReference(0, 38_submod_0) for runlist item 38_submod_1 arg_idx 0
+DEBUG:root:[1][38] all operands ready: 38_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][38] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][38] Executing transfer of value ValueReference(1, 38_submod_1) initiated by stage 2 for 38_submod_2
+INFO:root:[1] Running forward module for microbatch 38
+DEBUG:root:[1][38] Populating result of type <class 'torch.Tensor'> for 38_submod_1
+DEBUG:root:[1][39] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][39] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][39] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 39_submod_1
+DEBUG:root:[1][39] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][39] Launching RPC data transfer for ValueReference 0 ValueReference(0, 39_submod_0)
+DEBUG:root:[1][39] Requesting transfer of value ValueReference(0, 39_submod_0) for runlist item 39_submod_1 arg_idx 0
+DEBUG:root:[1][40] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][40] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][40] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 40_submod_1
+DEBUG:root:[1][40] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1][39] Executing transfer of value ValueReference(1, 39_submod_1) initiated by stage 2 for 39_submod_2
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['39_submod_1'])
+DEBUG:root:[1][40] Launching RPC data transfer for ValueReference 0 ValueReference(0, 40_submod_0)
+DEBUG:root:[1][40] Requesting transfer of value ValueReference(0, 40_submod_0) for runlist item 40_submod_1 arg_idx 0
+DEBUG:root:[1][39] Completing transfer of value ValueReference(0, 39_submod_0) for runlist item 39_submod_1 arg_idx 0
+DEBUG:root:[1][39] all operands ready: 39_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][39] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 39
+DEBUG:root:[1][39] Populating result of type <class 'torch.Tensor'> for 39_submod_1
+DEBUG:root:[1][40] Executing transfer of value ValueReference(1, 40_submod_1) initiated by stage 2 for 40_submod_2
+DEBUG:root:[1][40] Completing transfer of value ValueReference(0, 40_submod_0) for runlist item 40_submod_1 arg_idx 0
+DEBUG:root:[1][40] all operands ready: 40_submod_1
+DEBUG:root:[1][41] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][41] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][41] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 41_submod_1
+DEBUG:root:[1][40] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][41] Scheduling WorkItem as WAITING workitem
+INFO:root:[1] Running forward module for microbatch 40
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][41] Launching RPC data transfer for ValueReference 0 ValueReference(0, 41_submod_0)
+DEBUG:root:[1][41] Requesting transfer of value ValueReference(0, 41_submod_0) for runlist item 41_submod_1 arg_idx 0
+DEBUG:root:[1][40] Populating result of type <class 'torch.Tensor'> for 40_submod_1
+DEBUG:root:[1][41] Completing transfer of value ValueReference(0, 41_submod_0) for runlist item 41_submod_1 arg_idx 0
+DEBUG:root:[1][41] all operands ready: 41_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][41] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 41
+DEBUG:root:[1][41] Populating result of type <class 'torch.Tensor'> for 41_submod_1
+DEBUG:root:[1][41] Executing transfer of value ValueReference(1, 41_submod_1) initiated by stage 2 for 41_submod_2
+DEBUG:root:[1][42] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][42] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][42] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 42_submod_1
+DEBUG:root:[1][42] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][42] Launching RPC data transfer for ValueReference 0 ValueReference(0, 42_submod_0)
+DEBUG:root:[1][42] Requesting transfer of value ValueReference(0, 42_submod_0) for runlist item 42_submod_1 arg_idx 0
+DEBUG:root:[1][42] Completing transfer of value ValueReference(0, 42_submod_0) for runlist item 42_submod_1 arg_idx 0
+DEBUG:root:[1][42] all operands ready: 42_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][42] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 42
+DEBUG:root:[1][42] Executing transfer of value ValueReference(1, 42_submod_1) initiated by stage 2 for 42_submod_2
+DEBUG:root:[1][42] Populating result of type <class 'torch.Tensor'> for 42_submod_1
+DEBUG:root:[1][43] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][43] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][43] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 43_submod_1
+DEBUG:root:[1][43] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][43] Launching RPC data transfer for ValueReference 0 ValueReference(0, 43_submod_0)
+DEBUG:root:[1][43] Requesting transfer of value ValueReference(0, 43_submod_0) for runlist item 43_submod_1 arg_idx 0
+DEBUG:root:[1][43] Completing transfer of value ValueReference(0, 43_submod_0) for runlist item 43_submod_1 arg_idx 0
+DEBUG:root:[1][43] all operands ready: 43_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][43] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 43
+DEBUG:root:[1][43] Populating result of type <class 'torch.Tensor'> for 43_submod_1
+DEBUG:root:[1][44] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][43] Executing transfer of value ValueReference(1, 43_submod_1) initiated by stage 2 for 43_submod_2
+DEBUG:root:[1][44] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][44] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 44_submod_1
+DEBUG:root:[1][44] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][44] Launching RPC data transfer for ValueReference 0 ValueReference(0, 44_submod_0)
+DEBUG:root:[1][44] Requesting transfer of value ValueReference(0, 44_submod_0) for runlist item 44_submod_1 arg_idx 0
+DEBUG:root:[1][44] Completing transfer of value ValueReference(0, 44_submod_0) for runlist item 44_submod_1 arg_idx 0
+DEBUG:root:[1][44] all operands ready: 44_submod_1
+DEBUG:root:[1][45] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][45] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][45] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 45_submod_1
+DEBUG:root:[1][45] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][45] Launching RPC data transfer for ValueReference 0 ValueReference(0, 45_submod_0)
+DEBUG:root:[1][45] Requesting transfer of value ValueReference(0, 45_submod_0) for runlist item 45_submod_1 arg_idx 0
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][44] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 44
+DEBUG:root:[1][45] Completing transfer of value ValueReference(0, 45_submod_0) for runlist item 45_submod_1 arg_idx 0
+DEBUG:root:[1][45] all operands ready: 45_submod_1
+DEBUG:root:[1][44] Executing transfer of value ValueReference(1, 44_submod_1) initiated by stage 2 for 44_submod_2
+DEBUG:root:[1][44] Populating result of type <class 'torch.Tensor'> for 44_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][45] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 45
+DEBUG:root:[1][45] Populating result of type <class 'torch.Tensor'> for 45_submod_1
+DEBUG:root:[1][46] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][46] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][46] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 46_submod_1
+DEBUG:root:[1][46] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][46] Launching RPC data transfer for ValueReference 0 ValueReference(0, 46_submod_0)
+DEBUG:root:[1][46] Requesting transfer of value ValueReference(0, 46_submod_0) for runlist item 46_submod_1 arg_idx 0
+DEBUG:root:[1][45] Executing transfer of value ValueReference(1, 45_submod_1) initiated by stage 2 for 45_submod_2
+DEBUG:root:[1][46] Executing transfer of value ValueReference(1, 46_submod_1) initiated by stage 2 for 46_submod_2
+DEBUG:root:[1][46] Completing transfer of value ValueReference(0, 46_submod_0) for runlist item 46_submod_1 arg_idx 0
+DEBUG:root:[1][46] all operands ready: 46_submod_1
+DEBUG:root:[1][47] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][47] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][47] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 47_submod_1
+DEBUG:root:[1][47] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][47] Launching RPC data transfer for ValueReference 0 ValueReference(0, 47_submod_0)
+DEBUG:root:[1][47] Requesting transfer of value ValueReference(0, 47_submod_0) for runlist item 47_submod_1 arg_idx 0
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][46] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 46
+DEBUG:root:[1][46] Populating result of type <class 'torch.Tensor'> for 46_submod_1
+DEBUG:root:[1][47] Completing transfer of value ValueReference(0, 47_submod_0) for runlist item 47_submod_1 arg_idx 0
+DEBUG:root:[1][47] all operands ready: 47_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][47] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 47
+DEBUG:root:[1][47] Populating result of type <class 'torch.Tensor'> for 47_submod_1
+DEBUG:root:[1][48] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][48] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][48] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 48_submod_1
+DEBUG:root:[1][48] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][48] Launching RPC data transfer for ValueReference 0 ValueReference(0, 48_submod_0)
+DEBUG:root:[1][48] Requesting transfer of value ValueReference(0, 48_submod_0) for runlist item 48_submod_1 arg_idx 0
+DEBUG:root:[1][47] Executing transfer of value ValueReference(1, 47_submod_1) initiated by stage 2 for 47_submod_2
+DEBUG:root:[1][48] Executing transfer of value ValueReference(1, 48_submod_1) initiated by stage 2 for 48_submod_2
+DEBUG:root:[1][48] Completing transfer of value ValueReference(0, 48_submod_0) for runlist item 48_submod_1 arg_idx 0
+DEBUG:root:[1][48] all operands ready: 48_submod_1
+DEBUG:root:[1][49] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][49] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][49] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 49_submod_1
+DEBUG:root:[1][49] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][48] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][49] Launching RPC data transfer for ValueReference 0 ValueReference(0, 49_submod_0)
+INFO:root:[1] Running forward module for microbatch 48
+DEBUG:root:[1][49] Requesting transfer of value ValueReference(0, 49_submod_0) for runlist item 49_submod_1 arg_idx 0
+DEBUG:root:[1][48] Populating result of type <class 'torch.Tensor'> for 48_submod_1
+DEBUG:root:[1][52] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][52] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][52] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 52_submod_1
+DEBUG:root:[1][52] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['49_submod_1'])
+DEBUG:root:[1][52] Launching RPC data transfer for ValueReference 0 ValueReference(0, 52_submod_0)
+DEBUG:root:[1][52] Requesting transfer of value ValueReference(0, 52_submod_0) for runlist item 52_submod_1 arg_idx 0
+DEBUG:root:[1][51] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][51] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][51] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 51_submod_1
+DEBUG:root:[1][51] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['49_submod_1', '52_submod_1'])
+DEBUG:root:[1][51] Launching RPC data transfer for ValueReference 0 ValueReference(0, 51_submod_0)
+DEBUG:root:[1][51] Requesting transfer of value ValueReference(0, 51_submod_0) for runlist item 51_submod_1 arg_idx 0
+DEBUG:root:[1][52] Executing transfer of value ValueReference(1, 52_submod_1) initiated by stage 2 for 52_submod_2
+DEBUG:root:[1][50] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][50] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][50] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 50_submod_1
+DEBUG:root:[1][51] Executing transfer of value ValueReference(1, 51_submod_1) initiated by stage 2 for 51_submod_2
+DEBUG:root:[1][50] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['49_submod_1', '52_submod_1', '51_submod_1'])
+DEBUG:root:[1][50] Launching RPC data transfer for ValueReference 0 ValueReference(0, 50_submod_0)
+DEBUG:root:[1][50] Requesting transfer of value ValueReference(0, 50_submod_0) for runlist item 50_submod_1 arg_idx 0
+DEBUG:root:[1][50] Executing transfer of value ValueReference(1, 50_submod_1) initiated by stage 2 for 50_submod_2
+DEBUG:root:[1][49] Completing transfer of value ValueReference(0, 49_submod_0) for runlist item 49_submod_1 arg_idx 0
+DEBUG:root:[1][49] all operands ready: 49_submod_1
+DEBUG:root:[1][49] Executing transfer of value ValueReference(1, 49_submod_1) initiated by stage 2 for 49_submod_2
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][49] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 49
+DEBUG:root:[1][53] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][53] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][53] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 53_submod_1
+DEBUG:root:[1][53] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['52_submod_1', '51_submod_1', '50_submod_1'])
+DEBUG:root:[1][53] Launching RPC data transfer for ValueReference 0 ValueReference(0, 53_submod_0)
+DEBUG:root:[1][50] Completing transfer of value ValueReference(0, 50_submod_0) for runlist item 50_submod_1 arg_idx 0
+DEBUG:root:[1][50] all operands ready: 50_submod_1
+DEBUG:root:[1][53] Requesting transfer of value ValueReference(0, 53_submod_0) for runlist item 53_submod_1 arg_idx 0
+DEBUG:root:[1][49] Populating result of type <class 'torch.Tensor'> for 49_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][50] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 50
+DEBUG:root:[1][51] Completing transfer of value ValueReference(0, 51_submod_0) for runlist item 51_submod_1 arg_idx 0
+DEBUG:root:[1][51] all operands ready: 51_submod_1
+DEBUG:root:[1][50] Populating result of type <class 'torch.Tensor'> for 50_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][51] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 51
+DEBUG:root:[1][51] Populating result of type <class 'torch.Tensor'> for 51_submod_1
+DEBUG:root:[1][52] Completing transfer of value ValueReference(0, 52_submod_0) for runlist item 52_submod_1 arg_idx 0
+DEBUG:root:[1][52] all operands ready: 52_submod_1
+DEBUG:root:[1][53] Completing transfer of value ValueReference(0, 53_submod_0) for runlist item 53_submod_1 arg_idx 0
+DEBUG:root:[1][54] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][54] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][52] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][53] all operands ready: 53_submod_1
+DEBUG:root:[1][54] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 54_submod_1
+DEBUG:root:[1][54] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][54] Launching RPC data transfer for ValueReference 0 ValueReference(0, 54_submod_0)
+DEBUG:root:[1][54] Requesting transfer of value ValueReference(0, 54_submod_0) for runlist item 54_submod_1 arg_idx 0
+DEBUG:root:[1][53] Executing transfer of value ValueReference(1, 53_submod_1) initiated by stage 2 for 53_submod_2
+DEBUG:root:[1][55] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][55] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][55] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 55_submod_1
+DEBUG:root:[1][55] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys(['54_submod_1'])
+DEBUG:root:[1][55] Launching RPC data transfer for ValueReference 0 ValueReference(0, 55_submod_0)
+DEBUG:root:[1][55] Requesting transfer of value ValueReference(0, 55_submod_0) for runlist item 55_submod_1 arg_idx 0
+DEBUG:root:[1][54] Executing transfer of value ValueReference(1, 54_submod_1) initiated by stage 2 for 54_submod_2
+INFO:root:[1] Running forward module for microbatch 52
+DEBUG:root:[1][54] Completing transfer of value ValueReference(0, 54_submod_0) for runlist item 54_submod_1 arg_idx 0
+DEBUG:root:[1][54] all operands ready: 54_submod_1
+DEBUG:root:[1][52] Populating result of type <class 'torch.Tensor'> for 52_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 2
+DEBUG:root:[1][53] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 53
+DEBUG:root:[1][55] Completing transfer of value ValueReference(0, 55_submod_0) for runlist item 55_submod_1 arg_idx 0
+DEBUG:root:[1][55] all operands ready: 55_submod_1
+DEBUG:root:[1][53] Populating result of type <class 'torch.Tensor'> for 53_submod_1
+DEBUG:root:[1][56] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][56] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][56] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 56_submod_1
+DEBUG:root:[1][56] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1] Dequeueing workitem from set of 2
+DEBUG:root:[1][56] Launching RPC data transfer for ValueReference 0 ValueReference(0, 56_submod_0)
+DEBUG:root:[1][56] Requesting transfer of value ValueReference(0, 56_submod_0) for runlist item 56_submod_1 arg_idx 0
+DEBUG:root:[1][54] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][55] Executing transfer of value ValueReference(1, 55_submod_1) initiated by stage 2 for 55_submod_2
+INFO:root:[1] Running forward module for microbatch 54
+DEBUG:root:[1][54] Populating result of type <class 'torch.Tensor'> for 54_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][55] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 55
+DEBUG:root:[1][56] Completing transfer of value ValueReference(0, 56_submod_0) for runlist item 56_submod_1 arg_idx 0
+DEBUG:root:[1][56] all operands ready: 56_submod_1
+DEBUG:root:[1][55] Populating result of type <class 'torch.Tensor'> for 55_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][57] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][57] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][57] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 57_submod_1
+DEBUG:root:[1][57] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][57] Launching RPC data transfer for ValueReference 0 ValueReference(0, 57_submod_0)
+DEBUG:root:[1][57] Requesting transfer of value ValueReference(0, 57_submod_0) for runlist item 57_submod_1 arg_idx 0
+DEBUG:root:[1][56] Executing transfer of value ValueReference(1, 56_submod_1) initiated by stage 2 for 56_submod_2
+DEBUG:root:[1][56] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 56
+DEBUG:root:[1][56] Populating result of type <class 'torch.Tensor'> for 56_submod_1
+DEBUG:root:[1][57] Executing transfer of value ValueReference(1, 57_submod_1) initiated by stage 2 for 57_submod_2
+DEBUG:root:[1][57] Completing transfer of value ValueReference(0, 57_submod_0) for runlist item 57_submod_1 arg_idx 0
+DEBUG:root:[1][57] all operands ready: 57_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][58] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][58] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][58] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 58_submod_1
+DEBUG:root:[1][58] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][58] Launching RPC data transfer for ValueReference 0 ValueReference(0, 58_submod_0)
+DEBUG:root:[1][58] Requesting transfer of value ValueReference(0, 58_submod_0) for runlist item 58_submod_1 arg_idx 0
+DEBUG:root:[1][57] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 57
+DEBUG:root:[1][57] Populating result of type <class 'torch.Tensor'> for 57_submod_1
+DEBUG:root:[1][58] Executing transfer of value ValueReference(1, 58_submod_1) initiated by stage 2 for 58_submod_2
+DEBUG:root:[1][58] Completing transfer of value ValueReference(0, 58_submod_0) for runlist item 58_submod_1 arg_idx 0
+DEBUG:root:[1][58] all operands ready: 58_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][58] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 58
+DEBUG:root:[1][59] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][59] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][59] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 59_submod_1
+DEBUG:root:[1][58] Populating result of type <class 'torch.Tensor'> for 58_submod_1
+DEBUG:root:[1][59] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][59] Launching RPC data transfer for ValueReference 0 ValueReference(0, 59_submod_0)
+DEBUG:root:[1][59] Requesting transfer of value ValueReference(0, 59_submod_0) for runlist item 59_submod_1 arg_idx 0
+DEBUG:root:[1][59] Completing transfer of value ValueReference(0, 59_submod_0) for runlist item 59_submod_1 arg_idx 0
+DEBUG:root:[1][59] all operands ready: 59_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][60] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][59] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+DEBUG:root:[1][59] Executing transfer of value ValueReference(1, 59_submod_1) initiated by stage 2 for 59_submod_2
+DEBUG:root:[1][60] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][60] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 60_submod_1
+DEBUG:root:[1][60] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][60] Launching RPC data transfer for ValueReference 0 ValueReference(0, 60_submod_0)
+DEBUG:root:[1][60] Requesting transfer of value ValueReference(0, 60_submod_0) for runlist item 60_submod_1 arg_idx 0
+INFO:root:[1] Running forward module for microbatch 59
+DEBUG:root:[1][59] Populating result of type <class 'torch.Tensor'> for 59_submod_1
+DEBUG:root:[1][60] Completing transfer of value ValueReference(0, 60_submod_0) for runlist item 60_submod_1 arg_idx 0
+DEBUG:root:[1][60] all operands ready: 60_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][60] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 60
+DEBUG:root:[1][61] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][61] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][61] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 61_submod_1
+DEBUG:root:[1][61] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][61] Launching RPC data transfer for ValueReference 0 ValueReference(0, 61_submod_0)
+DEBUG:root:[1][61] Requesting transfer of value ValueReference(0, 61_submod_0) for runlist item 61_submod_1 arg_idx 0
+DEBUG:root:[1][60] Populating result of type <class 'torch.Tensor'> for 60_submod_1
+DEBUG:root:[1][60] Executing transfer of value ValueReference(1, 60_submod_1) initiated by stage 2 for 60_submod_2
+DEBUG:root:[1][61] Completing transfer of value ValueReference(0, 61_submod_0) for runlist item 61_submod_1 arg_idx 0
+DEBUG:root:[1][61] all operands ready: 61_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][61] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 61
+DEBUG:root:[1][62] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][62] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][62] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 62_submod_1
+DEBUG:root:[1][62] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][62] Launching RPC data transfer for ValueReference 0 ValueReference(0, 62_submod_0)
+DEBUG:root:[1][62] Requesting transfer of value ValueReference(0, 62_submod_0) for runlist item 62_submod_1 arg_idx 0
+DEBUG:root:[1][61] Populating result of type <class 'torch.Tensor'> for 61_submod_1
+DEBUG:root:[1][61] Executing transfer of value ValueReference(1, 61_submod_1) initiated by stage 2 for 61_submod_2
+DEBUG:root:[1][62] Completing transfer of value ValueReference(0, 62_submod_0) for runlist item 62_submod_1 arg_idx 0
+DEBUG:root:[1][62] all operands ready: 62_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][62] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 62
+DEBUG:root:[1][62] Populating result of type <class 'torch.Tensor'> for 62_submod_1
+DEBUG:root:[1][63] Received invoke call for %submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})
+DEBUG:root:[1][63] Invoke call found 1 ValueReference arguments
+DEBUG:root:[1][63] Invoke instantiated WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {})) with key 63_submod_1
+DEBUG:root:[1][63] Scheduling WorkItem as WAITING workitem
+DEBUG:root:[1] Current waiting runlist keys: dict_keys([])
+DEBUG:root:[1][63] Launching RPC data transfer for ValueReference 0 ValueReference(0, 63_submod_0)
+DEBUG:root:[1][63] Requesting transfer of value ValueReference(0, 63_submod_0) for runlist item 63_submod_1 arg_idx 0
+DEBUG:root:[1][62] Executing transfer of value ValueReference(1, 62_submod_1) initiated by stage 2 for 62_submod_2
+DEBUG:root:[1][63] Completing transfer of value ValueReference(0, 63_submod_0) for runlist item 63_submod_1 arg_idx 0
+DEBUG:root:[1][63] all operands ready: 63_submod_1
+DEBUG:root:[1] Dequeueing workitem from set of 1
+DEBUG:root:[1][63] Got WorkItem WorkItem(%submod_1 : [#users=1] = call_module[target=submod_1](args = (%submod_0,), kwargs = {}))
+INFO:root:[1] Running forward module for microbatch 63
+DEBUG:root:[1][63] Populating result of type <class 'torch.Tensor'> for 63_submod_1
+DEBUG:root:[1][63] Executing transfer of value ValueReference(1, 63_submod_1) initiated by stage 2 for 63_submod_2
