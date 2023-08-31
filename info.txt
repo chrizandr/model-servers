@@ -1,12 +1,14 @@
-Latest:
+latest(0.8):
+Python 3.9.17 (main, Jun  6 2023, 20:11:04)
+>> torch.__version__
+'2.0.1+cu117'
 
+0.7.0:
 Python 3.8.10 (default, Nov 14 2022, 12:59:47)
 >>> torch.__version__
 '1.13.1+cu117'
 
-
 Couture:
-
 Python 3.6.9 (default, Oct  8 2020, 12:12:24)
 >>> torch.__version__
 '1.4.0+cu100'
