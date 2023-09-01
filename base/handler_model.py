@@ -1,6 +1,6 @@
 import os
 from torchvision.models import resnet18, resnet50, ResNet18_Weights, ResNet50_Weights
-
+from base_handler import handler_factory
 
 def init_function(resnet_layers=18):
     # Function should return a torch.nn.module
@@ -30,3 +30,9 @@ def install_packages():
 
 def unpack_dependencies():
     os.system("echo 'unpacking dependencies'")
+
+
+handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
+                          install_packages=install_packages, unpack_dependencies=unpack_dependencies,
+                          resnet_layers=18)
+handler.__module__ = __name__

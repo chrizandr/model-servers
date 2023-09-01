@@ -11,6 +11,7 @@ import torch
 import os
 import warnings
 import logging
+import time
 
 
 def limit_memory(value=None, gpu_id=0):
@@ -99,6 +100,7 @@ def handler_factory(init_function, preprocess_function=lambda x: x, postprocess_
                 src = os.path.join(self.model_dir, extra_files)
                 logging.info(f"unpacking extra files to: {self.model_dir}")
                 os.system(f"tar -xzf {src} -C {self.model_dir}")
+                time.sleep(10)
 
             if unpack_dependencies:
                 unpack_dependencies()
@@ -201,30 +203,30 @@ def handler_factory(init_function, preprocess_function=lambda x: x, postprocess_
     return Handler
 
 
-def import_modules():
-    from handler_model import init_function
-    try:
-        from handler_model import preprocess
-    except ImportError:
-        warnings.warn("Warning: No preprocess function defined in model function. Using identity function")
-        preprocess = lambda x:x
-    try:
-        from handler_model import postprocess
-    except ImportError:
-        warnings.warn("Warning: No postprocess function defined in model function. Using identity function")
-        postprocess = lambda x:x
-    try:
-        from handler_model import install_packages
-    except ImportError:
-        install_packages = None
-    try:
-        from handler_model import unpack_dependencies
-    except ImportError:
-        unpack_dependencies = None
-    return init_function, preprocess, postprocess, install_packages, unpack_dependencies
+# def import_modules():
+#     from handler_model import init_function
+#     try:
+#         from handler_model import preprocess
+#     except ImportError:
+#         warnings.warn("Warning: No preprocess function defined in model function. Using identity function")
+#         preprocess = lambda x:x
+#     try:
+#         from handler_model import postprocess
+#     except ImportError:
+#         warnings.warn("Warning: No postprocess function defined in model function. Using identity function")
+#         postprocess = lambda x:x
+#     try:
+#         from handler_model import install_packages
+#     except ImportError:
+#         install_packages = None
+#     try:
+#         from handler_model import unpack_dependencies
+#     except ImportError:
+#         unpack_dependencies = None
+#     return init_function, preprocess, postprocess, install_packages, unpack_dependencies
 
 
-init_function, preprocess, postprocess, install_packages, unpack_dependencies = import_modules()
-handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
-                          install_packages=install_packages, unpack_dependencies=unpack_dependencies,
-                          resnet_layers=18)
+# init_function, preprocess, postprocess, install_packages, unpack_dependencies = import_modules()
+# handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
+#                           install_packages=install_packages, unpack_dependencies=unpack_dependencies,
+#                           resnet_layers=18)

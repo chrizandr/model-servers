@@ -55,36 +55,36 @@ echo "Building MAR with the following configuration....."
 echo "-------------------"
 echo "TorchServe model / MAR file name: $model_name"
 echo "Model / MAR version: $version"
-echo "Model source code file: $model_file"
+echo "Model code file: $model_file"
 echo "TorchServe model config file: $config_file"
 echo "Model requirements file: $requirements_file"
 echo "Model checkpoint file: $checkpoint_file"
 
 # temp_dir=$(mktemp -d)
 # random_filename=$(mktemp --tmpdir="$temp_dir" XXXXXX.py)
-cp $model_file handler_model.py 2>/dev/null
+# cp $model_file handler_model.py 2>/dev/null
 
 if [ -n "$extra_files" ]; then
     echo "Extra files: $extra_files"
     echo "-------------------"
     echo "Copying model file to: handler_model.py"
     torch-model-archiver -f --model-name $model_name --version $version \
-                     --handler base_handler.py \
+                     --handler $model_file \
                      --serialized-file $checkpoint_file \
                      --runtime python3 \
                      --requirements-file $requirements_file \
-                     --model-file handler_model.py \
+                     --model-file base_handler.py \
                      --config-file $config_file \
                      --extra-files $extra_files
 else
     echo "-------------------"
     echo "Copying model file to: handler_model.py"
     torch-model-archiver -f --model-name $model_name --version $version \
-                     --handler base_handler.py \
+                     --handler $model_file \
                      --serialized-file $checkpoint_file \
                      --runtime python3 \
                      --requirements-file $requirements_file \
-                     --model-file handler_model.py \
+                     --model-file base_handler.py \
                      --config-file $config_file
 fi
 
