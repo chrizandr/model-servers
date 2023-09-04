@@ -67,7 +67,6 @@ echo "Model checkpoint file: $checkpoint_file"
 if [ -n "$extra_files" ]; then
     echo "Extra files: $extra_files"
     echo "-------------------"
-    echo "Copying model file to: handler_model.py"
     torch-model-archiver -f --model-name $model_name --version $version \
                      --handler $model_file \
                      --serialized-file $checkpoint_file \
@@ -78,7 +77,6 @@ if [ -n "$extra_files" ]; then
                      --extra-files $extra_files
 else
     echo "-------------------"
-    echo "Copying model file to: handler_model.py"
     torch-model-archiver -f --model-name $model_name --version $version \
                      --handler $model_file \
                      --serialized-file $checkpoint_file \
@@ -91,6 +89,6 @@ fi
 # ./build.sh --model_name test-model --version 1 --model_file handler_model.py \
 #            --config_file model-config.yml --requirements_file requirements.txt \
 #            --checkpoint_file /data/chris/model-servers/models/resnet/resnet18-f37072fd.pth \
-#            --extra_files test.tar.gz
+#            --extra_files sample.tar.gz
 
 # sudo cp test-model.mar /data/docker/volumes/ts-test/_data/pytorch-models

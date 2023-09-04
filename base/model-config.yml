@@ -7,7 +7,7 @@ batchSize: 4
 deviceType: "gpu"
 
 system:
-  extraFiles: "test.tar.gz"
+  extraFiles: "sample.tar.gz"
   maxGPUMemory: 500 # Max GPU Memory needed by model in MB
 
 # deviceType: cpu # cpu, gpu, neuron

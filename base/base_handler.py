@@ -12,6 +12,7 @@ import os
 import warnings
 import logging
 import time
+import inspect
 
 
 def limit_memory(value=None, gpu_id=0):
@@ -19,15 +20,15 @@ def limit_memory(value=None, gpu_id=0):
         total_memory = torch.cuda.get_device_properties(gpu_id).total_memory
         # total_memory = 16935682048
         memory_fraction = min(1, float(value * 1024 * 1024) / total_memory)
-        print(f"[HANDLER] Torch version: {torch.__version__}, Model requires {memory_fraction * 100}% GPU memory on device:{gpu_id}. Total RAM available to model: {value}MB")
+        logging.info(f"[HANDLER] Torch version: {torch.__version__}, Model requires {memory_fraction * 100}% GPU memory on device:{gpu_id}. Total RAM available to model: {value}MB")
 
         torch.cuda.set_per_process_memory_fraction(memory_fraction, gpu_id)
 
         try:
             torch.empty(int(total_memory * memory_fraction * 1.1), dtype=torch.int8, device=f'cuda:{gpu_id}')
-            print(f"[HANDLER] Memory not limited, able to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
+            logging.info(f"[HANDLER] Memory not limited, able to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
         except torch.cuda.OutOfMemoryError as e:  # type: ignore
-            print(f"[HANDLER] Memory limited, fialed to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
+            logging.info(f"[HANDLER] Memory limited, fialed to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
 
         torch.cuda.empty_cache()
 
@@ -85,8 +86,6 @@ def handler_factory(init_function, preprocess_function=lambda x: x, postprocess_
             These need to be exectuable in python.
             If shell based installations are needed use os.system(command) or subprocess
             """
-
-
             if install_packages:
                 install_packages()
 
@@ -200,33 +199,9 @@ def handler_factory(init_function, preprocess_function=lambda x: x, postprocess_
 
             return processed_output
 
+    # Change module to user handler so torchserve can discover it
+    frm = inspect.stack()[1]
+    mod = inspect.getmodule(frm[0])
+    Handler.__module__ = mod.__name__
+
     return Handler
-
-
-# def import_modules():
-#     from handler_model import init_function
-#     try:
-#         from handler_model import preprocess
-#     except ImportError:
-#         warnings.warn("Warning: No preprocess function defined in model function. Using identity function")
-#         preprocess = lambda x:x
-#     try:
-#         from handler_model import postprocess
-#     except ImportError:
-#         warnings.warn("Warning: No postprocess function defined in model function. Using identity function")
-#         postprocess = lambda x:x
-#     try:
-#         from handler_model import install_packages
-#     except ImportError:
-#         install_packages = None
-#     try:
-#         from handler_model import unpack_dependencies
-#     except ImportError:
-#         unpack_dependencies = None
-#     return init_function, preprocess, postprocess, install_packages, unpack_dependencies
-
-
-# init_function, preprocess, postprocess, install_packages, unpack_dependencies = import_modules()
-# handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
-#                           install_packages=install_packages, unpack_dependencies=unpack_dependencies,
-#                           resnet_layers=18)

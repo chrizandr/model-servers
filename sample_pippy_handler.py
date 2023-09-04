@@ -97,6 +97,7 @@ class LLMHandler(BasePippyHandler, ABC):
         logger.info("Transformer model from path %s loaded successfully",  self.model_dir)
         self.initialized = True
 
+
     def prebuild_tokenizer(self, tokenizer, model):
         origin_tokenizer_len = len(tokenizer)
         if tokenizer.pad_token is None:

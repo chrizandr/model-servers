@@ -212,10 +212,9 @@ handler = handler_factory(init_function=init_function,
                           install_packages=install_packages,
                           unpack_dependencies=unpack_dependencies,
                           resnet_layers=18)
-handler.__module__ = __name__
 ```
 
-**NOTE:** `handler.__module__ == __name__` is how torchserving discover classes in the script that are supposed to be handlers. This line is necessary. Also notice how extra parameters needed to initialise the model are passed as keyword arguments to the `handler_factory`. This is limited for now to the `init_function`, we will later add options to pass arguments to all the other functions as well.
+**NOTE:** Notice how extra parameters needed to initialise the model are passed as keyword arguments to the `handler_factory`. This is limited for now to the `init_function`, we will later add options to pass arguments to all the other functions as well.
 
 ## 4. Packaging your handler
 ### Creating the MAR file
