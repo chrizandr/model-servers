@@ -92,3 +92,8 @@ fi
 #            --extra_files sample.tar.gz
 
 # sudo cp test-model.mar /data/docker/volumes/ts-test/_data/pytorch-models
+# torch-model-archiver -f --model-name torchserve_dill --version 1 \
+#                      --handler custom_handler.py \
+#                      --serialized-file pytorch_mnist_cnn_1.pt \
+#                      --runtime python3 \
+#                      --requirements-file requirements.txt

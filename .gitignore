@@ -5,6 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+*.mar
+tests/Huggingface_pippy/
+
 
 # Distribution / packaging
 .Python

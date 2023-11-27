@@ -34,8 +34,10 @@ def unpack_dependencies():
     os.system("echo 'unpacking dependencies'")
 
 
-# handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
-#                           install_packages=install_packages, unpack_dependencies=unpack_dependencies,
-#                           resnet_layers=18)
 handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
+                          install_packages=install_packages, unpack_dependencies=unpack_dependencies,
                           resnet_layers=18)
+
+# Without unpack_dependencies and install_packages
+# handler = handler_factory(init_function=init_function, preprocess_function=preprocess, postprocess_function=postprocess,
+#                           resnet_layers=18)

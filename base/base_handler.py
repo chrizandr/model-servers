@@ -20,15 +20,19 @@ def limit_memory(value=None, gpu_id=0):
         total_memory = torch.cuda.get_device_properties(gpu_id).total_memory
         # total_memory = 16935682048
         memory_fraction = min(1, float(value * 1024 * 1024) / total_memory)
-        logging.info(f"[HANDLER] Torch version: {torch.__version__}, Model requires {memory_fraction * 100}% GPU memory on device:{gpu_id}. Total RAM available to model: {value}MB")
+        logging.info(f"[HANDLER] Torch version: {torch.__version__}, \
+            Model requires {memory_fraction * 100}% GPU memory on device:{gpu_id}. \
+            Total RAM available to model: {value}MB")
 
         torch.cuda.set_per_process_memory_fraction(memory_fraction, gpu_id)
 
         try:
             torch.empty(int(total_memory * memory_fraction * 1.1), dtype=torch.int8, device=f'cuda:{gpu_id}')
-            logging.info(f"[HANDLER] Memory not limited, able to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
+            logging.info(f"[HANDLER] Memory not limited, \
+                able to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
         except torch.cuda.OutOfMemoryError as e:  # type: ignore
-            logging.info(f"[HANDLER] Memory limited, fialed to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
+            logging.info(f"[HANDLER] Memory limited, \
+                failed to allocate {total_memory * memory_fraction * 1.1 / 1024 / 1024}MB")
 
         torch.cuda.empty_cache()
 

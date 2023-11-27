@@ -10,7 +10,6 @@ world_size = int(os.environ.get("WORLD_SIZE", 0))
 logging.basicConfig(filename=f'node_{local_rank}.log', filemode='w', level=logging.DEBUG)
 
 class MyNetworkBlock(torch.nn.Module):
-
     def __init__(self, in_dim, out_dim):
         super().__init__()
         self.lin = torch.nn.Linear(in_dim, out_dim)

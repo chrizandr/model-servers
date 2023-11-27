@@ -215,7 +215,6 @@ handler = handler_factory(init_function=init_function,
 ```
 
 **NOTE:** Notice how extra parameters needed to initialise the model are passed as keyword arguments to the `handler_factory`. This is limited for now to the `init_function`, we will later add options to pass arguments to all the other functions as well.
-
 ## 4. Packaging your handler
 ### Creating the MAR file
 
